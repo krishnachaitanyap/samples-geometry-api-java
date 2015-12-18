@@ -9,6 +9,11 @@ import com.esri.core.geometry.MultiPath;
 import com.esri.core.geometry.OperatorImportFromWkt;
 import com.esri.core.geometry.OperatorSimplifyOGC;
 
+//This opens a text file with name passed as a command line argument. The file should contain an OGC Polygon, MultiPolygon, LineString, or 
+//MultiLineString (WKT format).
+//The program validates geometry topological correctness with isSimpleOGC,
+//Then it fixes any potential issues with OperatorSimplifyOGC (even if non were found, just to demonstrate the time),
+//Then it revalidates the result geometry.
 public final class OperatorSimplifyOGCTest {
 
 	public static void main(String[] args) throws IOException {
